@@ -1,0 +1,72 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Create Usuario";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Create Usuario</h2>
+</div>
+
+<form asp-controller="Usuario" asp-action="Create" method="post">
+    <!-- Nome input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="Nome">Nome</label>
+        <input type="text" id="form2Example2" asp-for="Nome" class="form-control" />
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+    <!-- Celular input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="Celular">Celular</label>
+        <input type="text" id="form2Example3" asp-for="Celular" class="form-control" />
+        @Html.ValidationMessageFor(x => x.Celular)
+    </div>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="Email">Email</label>
+        <input type="text" id="form2Example3" asp-for="Email" class="form-control" />
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember me </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <!-- Simple link -->
+            <a href="#!">Forgot password?</a>
+        </div>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block" asp-controller="Usuario" asp-action="Create">Cadastrar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Usuario" asp-action="Index" role="button">Voltar</a>
+
+    <!-- Register buttons -->
+    <div class="text-center">
+        <p>Not a member? <a href="#!">Register</a></p>
+        <p>or sign up with:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-google"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-github"></i>
+        </button>
+    </div>
+</form>
